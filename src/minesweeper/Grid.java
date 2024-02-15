@@ -112,29 +112,34 @@ public class Grid {
             for (int j = b - 1; j <= b + 1; j++) {
                 if (j < 0 || j > 9) continue;
 
-                this.grid[i][j].revealCell();
+                getCell(i, j).revealCell();
             }
         }
     }
 
-//    public void recursiveFunction(int a, int b) {
-//
-//
-//        if (this.grid[a][b].getMinesInVicinity() == 0) {
-//
-//            revealVicinity(a, b);
-//
-//
-//            for (int i = a - 1; i <= a + 1; i++) {
-//                for (int j = b - 1; j <= b + 1; j++) {
-//                    if (i == a && j == b) {
-//                        continue;
-//                    }
-//                    recursiveFunction(i, j);
-//                }
-//            }
-//        }
-//    }
+    public void recursiveFunction(int a, int b) {
+      
+  
+        if (getCell(a, b).getMinesInVicinity() == 0) {
+
+            revealVicinity(a, b);
+
+
+            for (int i = a - 1; i <= a + 1; i++) {
+            	  if (i < 0 || i > 9) continue;
+                for (int j = b - 1; j <= b + 1; j++) {
+                	   if (j < 0 || j > 9) continue;
+                    if (i == a && j == b) {
+                        continue;
+                    }
+                    if (getCell(a, b).checkRevealed() == false) {
+                    recursiveFunction(i, j);
+                }
+                    }
+            }
+        }
+    }
+      
 
 
 

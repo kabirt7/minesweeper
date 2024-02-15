@@ -38,7 +38,7 @@ public class Main {
             
 
             grid.getCell(a, b).revealCell();
-//            if (grid.getCell(a, b).getMinesInVicinity() == 0) {grid.recursiveFunction(a,b);};
+            grid.recursiveFunction(a,b);
             
             grid.printGrid();
 
