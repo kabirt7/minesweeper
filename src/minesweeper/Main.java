@@ -35,10 +35,10 @@ public class Main {
             	continue;
             }
             
-            
-
-            grid.getCell(a, b).revealCell();
+           
             grid.recursiveFunction(a,b);
+            grid.getCell(a, b).revealCell();
+           
             
             grid.printGrid();
 

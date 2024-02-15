@@ -118,27 +118,24 @@ public class Grid {
     }
 
     public void recursiveFunction(int a, int b) {
-      
-  
-        if (getCell(a, b).getMinesInVicinity() == 0) {
+        if (!getCell(a, b).checkRevealed() && !getCell(a,b).checkIfMine()) {  
+            getCell(a, b).revealCell();
 
-            revealVicinity(a, b);
+            
+         if(getCell(a,b).getMinesInVicinity() == 0) {
+                for (int i = a - 1; i <= a + 1; i++) {
+                    if (i < 0 || i >= this.length) continue;
+                    for (int j = b - 1; j <= b + 1; j++) {
+                        if (j < 0 || j >= this.width) continue;
+                        if (i == a && j == b) continue;
 
-
-            for (int i = a - 1; i <= a + 1; i++) {
-            	  if (i < 0 || i > 9) continue;
-                for (int j = b - 1; j <= b + 1; j++) {
-                	   if (j < 0 || j > 9) continue;
-                    if (i == a && j == b) {
-                        continue;
+                        recursiveFunction(i, j);
                     }
-                    if (getCell(a, b).checkRevealed() == false) {
-                    recursiveFunction(i, j);
                 }
-                    }
-            }
+         }
         }
     }
+
       
 
 
