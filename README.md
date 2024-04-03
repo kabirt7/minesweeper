@@ -49,7 +49,7 @@
 * Add in Colour and number grid
 
 ## Struggles
-
+* This was my first project using Object-Orientated Design. It solidifed my understanding of classes, instances of classes and how their methods & properties work.
 * The recursive function took a bit of troubleshooting but I got there in the end
 ```java
 public void recursiveFunction(int a, int b) {
