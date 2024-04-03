@@ -1,7 +1,5 @@
 # MINESWEEPER
 
-{add test badges here, all projects you build from here on out will have tests, therefore you should have github workflow badges at the top of your repositories: Github Workflow Badges}
-
 ## DEMO
 
 ![demo of project](demo.gif)
